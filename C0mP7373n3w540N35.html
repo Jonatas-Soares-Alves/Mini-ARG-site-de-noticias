@@ -8,32 +8,16 @@
 </head>
 <body>
     <script>
-        function getCookie(cname){
-            let name = cname + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for(let i = 0; i < ca.length; i++){
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0){
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function checkCookie() {
-            let username = getCookie("key");
-            if (username != "Kenji") {
-                return false;
+        function checkSession(){
+            let k = sessionStorage.getItem("key");
+            if(k == "Kenji"){
+                return true
             }else{
-                return true;
+                return false
             }
         }
 
-        if(!checkCookie()){
+        if(!checkSession()){
             alert("Você não tem permissão de acessar essa página!");
             window.location.replace("http://www.gazetagoytacazes.cf/Noticia1.html");
         }

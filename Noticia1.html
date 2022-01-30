@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gazeta de Goytacazes</title>
+    <title>GTT - Casal assassinado após invasão, filha sobrevive</title>
     <link rel="icon" type="image/x-icon" href="Imagens/favicon.png">
 </head>
 <body class="bg-light bg-gradient" style="font-family: 'Open Sans', sans-serif;">
@@ -28,7 +28,7 @@
     </header>
 
     <main class="container-md mb-5 p-5 border rounded" style="text-align: justify; text-justify: inter-word;">
-        <h1 class="mb-3" style="font-size: 7vh; font-weight: bolder;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro fugit corporis doloribus tempora !</h1>
+        <h1 class="mb-3" style="font-size: 7vh; font-weight: bolder;">Casal assassinado após invasão, filha sobrevive</h1>
         <h4 class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ab fugiat provident neque perferendis, corporis, voluptatibus nam maxime nostrum ullam at quos doloribus quidem, perspiciatis odio laboriosam molestias est sequi?</h4>
         <p><b>Por:</b> Nome (dd/mm/aaaa)</p>
         <div class="container mb-5 bg-info bg-gradient rounded pt-2 pb-2" style="width: 100%; height: auto;">
@@ -225,13 +225,6 @@
                 return temp.toLowerCase();
                 }
 
-                function setCookie(cname, cvalue, exdays) {
-                    const d = new Date();
-                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-                    let expires = "expires="+ d.toUTCString();
-                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-                }
-
                 var cont = 0;
                 function Check(){
                     senha = document.getElementById("senha").value;
@@ -242,7 +235,7 @@
                         var f = "U2FsdGVkX1+wc3y9F51KvFsItF+ZvWUL7M4AJz6HRWCsGcy1MNUxRFteV2vF7CIu";
                         var decrypted = CryptoJS.AES.decrypt(f, "In3lIunpa023n4rhabdlaieuAeuan2a"); 
                         window.location.href = "http://www.gazetagoytacazes.cf/"+decrypted.toString(CryptoJS.enc.Utf8)+".html"
-                        setCookie("key", "Kenji", 1);
+                        sessionStorage.setItem("key", "Kenji");
                     }else {
                         cont++;
                         
