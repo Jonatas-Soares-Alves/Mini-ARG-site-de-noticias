@@ -27,12 +27,14 @@
         function checkCookie() {
             let username = getCookie("key");
             if (username != "Kenji") {
-                window.location.replace("http://www.gazetagoytacazes.cf/Noticia1.html");
+                return false;
             }
         }
 
-        checkCookie();
-        alert("Você não tem permissão de acessar essa página!");
+        if(!checkCookie()){
+            alert("Você não tem permissão de acessar essa página!");
+            window.location.replace("http://www.gazetagoytacazes.cf/Noticia1.html");
+        }
 
     </script>
     <h1>OLA COMPLETO</h1>
