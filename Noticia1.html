@@ -260,7 +260,6 @@
 
                     }
                 }
-                
             </script>
 
             <!-- Modal -->
@@ -273,12 +272,23 @@
                                     <label for="senha" class="form-label">Senha:</label>
                                     <input type="password" class="form-control" id="senha">
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="Check()">Entrar</button>
+                                <button type="button" class="btn btn-primary" id="Btn" onclick="Check()">Entrar</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                var input = document.getElementById("senha");
+
+                input.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById("Btn").click();
+                    }
+                });
+            </script>
 
         </div>
     </main>
